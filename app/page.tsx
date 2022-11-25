@@ -1,12 +1,16 @@
 import React from 'react'
+import About from './About'
 import Header from './Header'
 import Hero from './Hero'
 const page = () => {
   return (
-    <div className='bg-[rgb(20,20,21)] text-white h-screen snap-y snap-mandatory z-0'>
+    <div className='text-white h-screen snap-y snap-mandatory overflow-scroll z-0'>
       <Header />
-      <section>
+      <section className='snap-start'>
         <Hero />
+      </section>
+      <section id="about" className='snap-center'>
+        <About />
       </section>
     </div>
   )

@@ -13,8 +13,8 @@ const HeroBackGround = () => {
       transition={{ duration: 3 }}
       className="relative flex justify-center items-center"
     >
-      <div className="absolute border border-[rgb(46,46,46)] rounded-full h-[200px] w-[200px] mt-52 animate-ping" />
-      <div className="border border-white opacity-20 rounded-full h-[650px] w-[650px] absolute mt-52 animate-pulse" />
+      <div className="absolute border border-[rgb(183,173,173)] rounded-full h-[200px] w-[200px] mt-52 animate-ping" />
+      <div className="border border-[rgb(196,26,26)] opacity-20 rounded-full h-[650px] w-[650px] absolute mt-52 animate-pulse" />
       <div className="" />
     </motion.div>
   )
