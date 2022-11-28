@@ -18,14 +18,16 @@ type Stack = {
   }
 }
 
-const fetcghTodos = async () => {
+const fetcghStacks = async () => {
   const res = await fetch("http://localhost:1337/api/stacks/?populate=*", {cache: 'force-cache'})
   const stacks = await res.json();
   return stacks;
 }
 
+const StackGet = fetcghStacks()
+
 const Skills = () => {
-const stacks = use(fetcghTodos())
+const stacks = use(StackGet)
 
   return (
     <motion.div

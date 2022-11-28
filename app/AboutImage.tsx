@@ -47,7 +47,7 @@ const AboutImage = () => {
     >
     <Canvas dpr={[1,2]} shadows camera={{fov: 45}} >
       <color attach="background" args={["rgb(100,100,101)"]} />
-      <PresentationControls speed={1.5} global zoom={.5} polar={[-0.1, Math.PI/ 3]} rotation={[0,count,0]}>
+      <PresentationControls speed={3} global zoom={3} polar={[-0.1, Math.PI/ 3]} >
         <Stage environment={"studio"}>
           <Model scale={0.01} />
         </Stage>
