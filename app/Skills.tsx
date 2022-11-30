@@ -35,7 +35,7 @@ const stacks = use(StackGet)
     whileInView={{opacity: 1}}
     transition={{duration: 1.5}}
     className='justify-center xl:space-y-0 mx-auto items-center flex relative flex-col md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen'>
-        <h3 className='absolute top-24 uppercase tracking-[15px] font-semibold text-gray-200 text-2xl'>Skills</h3>
+        <h3 className='absolute top-16 uppercase tracking-[15px] font-semibold text-gray-200 text-2xl'>Skills</h3>
         <div className='grid grid-cols-4 gap-5 '>
             {stacks?.data?.map((stack:Stack) =>(
               <Skill 
