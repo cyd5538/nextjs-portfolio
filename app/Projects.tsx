@@ -10,6 +10,7 @@ type Project = {
     deploy: string,
     description: string,
     title: string,
+    subtitle: string,
     main : {
       data : {
         attributes : {
@@ -42,19 +43,22 @@ const Projects = () => {
             Products
         </h3>
         <div className='carousel relative w-full flex overflow-x-scroll scrollbar scrollbar-thumb-purple-800 scrollbar-track-gray-100 overflow-y-hidden snap-mandatory	snap-x z-20'>
-            {pro?.data?.map((project:Project) =>(
+            {pro?.data?.map((project:Project, i:number) =>(
               <Project 
                 key={project.id} 
                 code={project.attributes.code}
                 deploy={project.attributes.deploy}
                 description={project.attributes.description}
+                subtitle={project.attributes.subtitle}
                 main={project.attributes.main.data.attributes.url}
                 title={project.attributes.title}
                 stack={project.attributes.stack.data}
+                length={i}
+                sum={pro.data.length}
               />
             ))}
         </div>
-        <div className='w-full absolute top-[30%] bg-[#F0F]/20 left-0 h-[500px] -skew-y-12'>
+        <div className='w-full absolute top-[30%] bg-[#240724]/20 left-0 h-[500px] -skew-y-12'>
         </div>
     </div>
   )

@@ -1,3 +1,4 @@
+import { link } from "fs/promises";
 import React from "react";
 
 
@@ -13,23 +14,29 @@ type Props = {
   main: string
   title : string
   stack : Stack[]
+  length: number
+  sum: number
+  subtitle : string
 }
 
-const Project = ({code, deploy, description, main, title , stack} : Props) => {
- 
+const Project = ({code, deploy, main, title , stack, length, sum, subtitle, description} : Props) => {
+  const des = description.split("\n")
   return (
     <div>
-      <div className="w-screen flex-shrink-0 snap-center flex flex-col lg:flex-row gap-8 space-y-5 items-center justify-center p-20 md:p-44 h-screen">
+
+      <div className="w-screen relative flex-shrink-0 snap-center flex flex-col lg:flex-row gap-8 space-y-5 items-center justify-center p-20 md:p-44 h-screen">
         <img
           src={`http://localhost:1337${main}`}
           alt={title}
           className="w-[250px] h-[150px] lg:w-[350px] lg:h-[250px]  rounded-xl"
         />
         <div className="flex justify-around items-start flex-col gap-4">
-          <h2 className="text-2xl font-semibold">{title}</h2>
-          {/* <p>
-            {description}
-          </p> */}
+        <div className="text-xl font-semibold mb-8 text-left w-full">프로젝트 <span className="text-purple-800">{length + 1}</span>/ {sum}</div>
+          <h2 className="text-xl font-semibold mb-1">{title}</h2>
+          <h2 className="text-sm mb-1">{subtitle}</h2>
+          <ul className="text-sm text-gray-100">{des?.map((d) => (
+            <li key={d} className="mb-1">{d}</li>
+          ))}</ul>
           <div className="flex gap-4">
             {stack.map((sta) => (
                 <img key={sta.attributes.url} src={`http://localhost:1337${sta.attributes.url}`} className="w-8 h-8 rounded-full" alt="" />
