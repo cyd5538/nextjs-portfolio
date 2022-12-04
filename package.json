@@ -6,14 +6,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@react-three/drei": "^9.43.3",
     "@react-three/fiber": "^8.9.1",
     "framer-motion": "^7.6.9",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.40.0",
+    "react-icons": "^4.7.1",
     "react-simple-typewriter": "^5.0.1",
-    "react-social-icons": "^5.15.0"
+    "react-social-icons": "^5.15.0",
+    "react-toastify": "^9.1.1"
   },
   "devDependencies": {
     "@types/node": "18.11.3",

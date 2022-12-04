@@ -74,15 +74,17 @@ const Header = ({}: Props) => {
         }}
         className="flex flex-row items-center text-gray-300"
       >
-        <SocialIcon
-          className="cursor-pointer"
-          network="email"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Contact Me
-        </p>
+        <a href="#contact">
+          <SocialIcon
+            className="cursor-pointer"
+            network="email"
+            fgColor="gray"
+            bgColor="transparent"
+          />
+          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+            Contact Me
+          </p>
+        </a>
       </motion.div>
     </header>
   );
