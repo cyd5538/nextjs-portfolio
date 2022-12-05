@@ -34,6 +34,9 @@ const Hero = () => {
             <a href='#projects'>
                 <button className="z-30 px-6 py-2 border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#fff]/70">Projects</button>
             </a>
+            <a href='#contact'>
+                <button className="z-30 px-6 py-2 border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#fff]/70">Contact</button>
+            </a>
           </div>
         </div>
     </div>

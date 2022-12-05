@@ -1,12 +1,29 @@
 "use client";
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from 'next/link';
-
+import { CiDark } from "react-icons/ci";
+import { BsBrightnessHigh } from "react-icons/bs";
 type Props = {};
 
 const Header = ({}: Props) => {
+  const [theme, setTheme] = useState<string>("light");
+  const element = document.documentElement;
+    // 다크모드
+    useEffect(() => {
+      switch (theme) {
+        case "dark":
+          element.classList.add("dark");
+          break;
+        case "light":
+          element.classList.remove("dark");
+          break;
+        default:
+          break;
+      }
+    }, [theme]);
+
   return (
     <header className="sticky top-0 p-5 flex flex-items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -41,7 +58,7 @@ const Header = ({}: Props) => {
 
         <SocialIcon
           url="https://github.com/cyd5538"
-          fgColor="white"
+          fgColor="gray"
           bgColor="transparent"
         />
 
@@ -74,17 +91,18 @@ const Header = ({}: Props) => {
         }}
         className="flex flex-row items-center text-gray-300"
       >
-        <a href="#contact">
-          <SocialIcon
-            className="cursor-pointer"
-            network="email"
-            fgColor="gray"
-            bgColor="transparent"
-          />
-          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-            Contact Me
+
+          {theme === "dark" ? <div className='w-8 h-8 mr-2 bg-black rounded-full flex justify-center items-center text-center text-xl font-bold text-yellow-300' onClick={() => {
+            setTheme('light')
+            localStorage.setItem("theme", JSON.stringify("light"));
+          }}><CiDark /></div> : <div className='w-8 h-8 mr-2 bg-white rounded-full flex justify-center items-center text-center text-xl text-yellow-800 font-bold' onClick={() => {
+            setTheme('dark')
+            localStorage.setItem("theme", JSON.stringify("dark"));
+          }}><BsBrightnessHigh /></div>}
+          <p className="uppercase hidden md:inline-flex text-sm text-gray-400 text-center">
+            CYJ Portfolio
           </p>
-        </a>
+
       </motion.div>
     </header>
   );

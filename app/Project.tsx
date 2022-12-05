@@ -31,10 +31,10 @@ const Project = ({code, deploy, main, title , stack, length, sum, subtitle, desc
           className="w-[250px] h-[150px] lg:w-[350px] lg:h-[250px]  rounded-xl"
         />
         <div className="flex justify-around items-start flex-col gap-4">
-        <div className="text-xl font-semibold mb-8 text-left w-full">프로젝트 <span className="text-purple-800">{length + 1}</span>/ {sum}</div>
+        <div className="text-xl font-semibold mb-8 text-left w-full">프로젝트 <span className="text-purple-800 dark:text-yellow-400">{length + 1}</span>/ {sum}</div>
           <h2 className="text-xl font-semibold mb-1">{title}</h2>
           <h2 className="text-sm mb-1">{subtitle}</h2>
-          <ul className="text-sm text-gray-100">{des?.map((d) => (
+          <ul className="text-sm text-gray-100 dark:text-black ">{des?.map((d) => (
             <li key={d} className="mb-1">{d}</li>
           ))}</ul>
           <div className="flex gap-4">
