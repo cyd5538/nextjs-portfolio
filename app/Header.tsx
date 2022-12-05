@@ -9,9 +9,10 @@ type Props = {};
 
 const Header = ({}: Props) => {
   const [theme, setTheme] = useState<string>("light");
-  const element = document.documentElement;
+  
     // 다크모드
     useEffect(() => {
+      const element = document.documentElement;
       switch (theme) {
         case "dark":
           element.classList.add("dark");
