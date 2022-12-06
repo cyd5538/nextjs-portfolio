@@ -101,7 +101,7 @@ const Header = ({}: Props) => {
             localStorage.setItem("theme", JSON.stringify("dark"));
           }}><BsBrightnessHigh /></div>}
           <p className="uppercase hidden md:inline-flex text-sm text-gray-400 text-center">
-            CYJ Portfolio
+            <a href="#home">CYJ Portfolio</a>
           </p>
 
       </motion.div>
